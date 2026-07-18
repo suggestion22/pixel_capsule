@@ -4,9 +4,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
+  min-height: var(--control-height);
   padding: 0 18px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-control);
   border: 1px solid var(--primary);
   font-weight: 900;
   box-shadow: 0 10px 26px rgba(18, 124, 116, 0.12);
@@ -26,6 +26,16 @@
   transform: translateY(-2px);
 }
 
+.primary-button:disabled,
+.download-button:disabled {
+  cursor: not-allowed;
+  border-color: var(--line);
+  background: color-mix(in srgb, var(--muted) 34%, var(--surface-2));
+  color: var(--muted);
+  box-shadow: none;
+  transform: none;
+}
+
 .secondary-button {
   background: var(--surface);
   color: var(--primary-strong);
@@ -35,6 +45,12 @@
 .secondary-button:hover {
   border-color: var(--primary-strong);
   transform: translateY(-2px);
+}
+
+.subtle-button {
+  border-color: var(--line);
+  background: var(--surface-2);
+  color: var(--muted);
 }
 
 .button-row {

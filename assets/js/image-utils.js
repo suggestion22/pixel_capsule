@@ -1,7 +1,7 @@
 (function () {
   var supportedTypes = ["image/jpeg", "image/png", "image/webp"];
   var maxPixels = 48000000;
-  var maxFileSize = 40 * 1024 * 1024;
+  var maxFileSize = 20 * 1024 * 1024;
 
   function formatBytes(bytes) {
     if (!Number.isFinite(bytes)) return "-";
@@ -29,7 +29,7 @@
         return;
       }
       if (file.size > maxFileSize) {
-        reject(new Error("파일이 너무 큽니다. 40MB 이하의 이미지를 선택해 주세요."));
+        reject(new Error("파일이 너무 커서 브라우저에서 처리하기 어렵습니다. 20MB 이하의 더 작은 이미지를 선택해 주세요."));
         return;
       }
       var url = URL.createObjectURL(file);
@@ -57,7 +57,7 @@
       canvas.height = height;
       var context = canvas.getContext("2d");
       if (!context) {
-        reject(new Error("브라우저에서 이미지 처리 화면을 만들 수 없습니다."));
+        reject(new Error("이미지를 처리하지 못했습니다. 이미지 크기를 줄이거나 다른 브라우저에서 다시 시도해 주세요."));
         return;
       }
       if (outputType === "image/jpeg") {

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>무료 이미지 크기 변경 도구 | Pixel Capsule</title>
-    <meta name="description" content="JPG, PNG, WebP 이미지를 원하는 픽셀 크기나 백분율로 브라우저에서 변경합니다.">
+    <meta name="description" content="JPG, PNG, WebP 이미지의 가로·세로 크기를 브라우저에서 안전하게 변경하고 바로 다운로드하세요. 서버 업로드와 워터마크 없이 무료로 사용할 수 있습니다.">
     <link rel="canonical" href="https://suggestion22.github.io/pixel_capsule/tools/image-resizer/">
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="../../assets/css/variables.css">
@@ -17,17 +17,24 @@
     <header class="site-header" data-site-header></header>
     <main>
       <section class="page-hero">
-        <p class="eyebrow">Browser image tool</p>
-        <h1>무료 이미지 크기 변경 도구</h1>
-        <p>원본 비율 유지, 백분율 조절, 결과 미리보기와 다운로드를 지원합니다.</p>
-        <p class="privacy-note">선택한 이미지는 서버에 업로드하지 않고 사용자의 브라우저 안에서 처리됩니다.</p>
+        <p class="eyebrow">Image Resizer</p>
+        <h1>무료 이미지 크기 변경</h1>
+        <p>JPG, PNG, WebP 이미지의 크기를 브라우저에서 빠르고 안전하게 변경하세요.</p>
+        <ul class="tool-trust-list" aria-label="서비스 특징">
+          <li><span aria-hidden="true">□</span>서버 업로드 없음</li>
+          <li><span aria-hidden="true">□</span>워터마크 없음</li>
+          <li><span aria-hidden="true">□</span>JPG · PNG · WebP 지원</li>
+        </ul>
       </section>
-      <section class="tool-workspace" data-image-tool>
-        <div class="drop-zone" data-drop-zone role="button" tabindex="0" aria-label="이미지 파일 선택">
-          <input class="file-input" data-file-input type="file" accept="image/jpeg,image/png,image/webp">
-          <strong>이미지를 드래그하거나 클릭해서 선택하세요</strong>
-          <span>JPG, PNG, WebP 지원. 파일은 브라우저 안에서 처리됩니다.</span>
-        </div>
+      <section class="tool-workspace resizer-workspace" data-image-tool>
+        <input id="resize-file-input" class="file-input" data-file-input type="file" accept="image/jpeg,image/png,image/webp">
+        <label class="drop-zone" data-drop-zone for="resize-file-input" role="button" tabindex="0" aria-label="이미지 선택 또는 드래그 앤 드롭">
+          <span class="upload-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <strong data-drop-title>이미지를 여기에 끌어다 놓으세요</strong>
+          <em>또는</em>
+          <span class="upload-button-visual">이미지 선택</span>
+          <small>JPG, PNG, WebP · 권장 최대 20MB</small>
+        </label>
         <p class="message error" data-error role="alert"></p>
         <p class="message" data-status aria-live="polite"></p>
         <div class="tool-panels">
@@ -37,14 +44,76 @@
         </div>
       </section>
       <section data-after-result hidden>
-        <div class="ad-placeholder" aria-label="Advertisement placeholder">Advertisement</div>
         <section class="capsule-card compact" data-capsule aria-label="아이디어 캡슐"></section>
+        <section class="related-tools" aria-labelledby="related-tools-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Next tools</p>
+              <h2 id="related-tools-title">다음 작업도 필요하신가요?</h2>
+            </div>
+          </div>
+          <div class="related-tool-grid">
+            <a href="../image-compressor/">
+              <strong>이미지 압축</strong>
+              <span>파일 용량을 줄입니다.</span>
+            </a>
+            <a href="../image-converter/">
+              <strong>이미지 형식 변환</strong>
+              <span>PNG, JPG, WebP 형식을 변환합니다.</span>
+            </a>
+            <a href="../image-presets/">
+              <strong>SNS 이미지 프리셋</strong>
+              <span>자주 사용하는 이미지 규격으로 변경합니다.</span>
+            </a>
+          </div>
+        </section>
+        <aside class="ad-placeholder ad-slot" aria-label="광고 영역"><span>Advertisement</span></aside>
       </section>
-      <section class="text-page">
+      <section class="text-page resizer-guide-content">
         <h2>사용 방법</h2>
-        <ol><li>이미지를 선택합니다.</li><li>가로, 세로, 비율 유지, 백분율 값을 설정합니다.</li><li>변환 실행 후 결과를 다운로드합니다.</li></ol>
+        <ol class="howto-grid">
+          <li><strong>1. 이미지 선택</strong><span>JPG, PNG 또는 WebP 파일을 선택하세요.</span></li>
+          <li><strong>2. 크기 설정</strong><span>가로·세로 또는 백분율을 지정하세요.</span></li>
+          <li><strong>3. 변환 및 다운로드</strong><span>결과를 확인한 뒤 이미지를 저장하세요.</span></li>
+        </ol>
         <h2>주의사항</h2>
-        <p>작은 이미지를 원본보다 크게 키우면 파일만 커지고 선명도는 좋아지지 않을 수 있습니다.</p>
+        <div class="info-callout">
+          <strong>알아두세요</strong>
+          <p>작은 이미지를 크게 확대하면 해상도는 커지지만, 원본에 없던 디테일이 새로 생성되지는 않습니다.</p>
+          <ul>
+            <li>너무 큰 이미지는 브라우저 메모리를 많이 사용할 수 있습니다.</li>
+            <li>일부 모바일 브라우저에서는 대용량 이미지 처리가 제한될 수 있습니다.</li>
+            <li>이 리사이저는 크기 변경 도구이며, 형식 변경은 이미지 형식 변환 도구에서 사용할 수 있습니다.</li>
+            <li>선택한 파일은 서버로 전송하지 않고 브라우저 안에서 처리됩니다.</li>
+          </ul>
+        </div>
+        <h2>자주 묻는 질문</h2>
+        <div class="faq-list">
+          <details>
+            <summary>이미지가 서버에 업로드되나요?</summary>
+            <p>아니요. 이 페이지의 이미지 크기 변경은 브라우저 안에서 처리되며, 선택한 이미지 파일을 서버에 저장하지 않습니다.</p>
+          </details>
+          <details>
+            <summary>어떤 이미지 형식을 지원하나요?</summary>
+            <p>JPG, JPEG, PNG, WebP 파일을 선택할 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>크기를 크게 하면 화질이 좋아지나요?</summary>
+            <p>해상도는 커지지만 원본에 없는 디테일이 새로 생기지는 않습니다. 너무 크게 확대하면 흐릿해 보일 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>투명 배경은 유지되나요?</summary>
+            <p>PNG와 WebP처럼 투명도를 지원하는 형식은 원본 형식을 유지해 저장하므로 투명 배경을 유지할 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>모바일에서도 사용할 수 있나요?</summary>
+            <p>네. 모바일 브라우저에서도 사용할 수 있지만, 큰 이미지에서는 기기 메모리 제한으로 처리가 어려울 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>파일 용량도 줄어드나요?</summary>
+            <p>크기를 줄이면 용량이 함께 줄어드는 경우가 많지만 항상 보장되지는 않습니다. 용량 최적화가 목적이라면 이미지 압축 도구를 함께 사용하세요.</p>
+          </details>
+        </div>
       </section>
     </main>
     <footer class="site-footer" data-site-footer></footer>

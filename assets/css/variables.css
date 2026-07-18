@@ -12,6 +12,16 @@
   --danger: #b42318;
   --shadow: 0 18px 50px rgba(23, 32, 29, 0.1);
   --radius: 8px;
+  --container-width: 1120px;
+  --tool-width: 960px;
+  --radius-card: 24px;
+  --radius-control: 12px;
+  --control-height: 48px;
+  --space-section: 88px;
+  --space-card: 28px;
+  --checker-size: 16px;
+  --checker-light: #f8faf9;
+  --checker-dark: #e3ebe7;
   color-scheme: light;
 }
 
@@ -28,5 +38,7 @@
   --accent-2: #93a7ff;
   --danger: #ff8c82;
   --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  --checker-light: #202822;
+  --checker-dark: #29342e;
   color-scheme: dark;
 }
