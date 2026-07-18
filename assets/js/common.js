@@ -80,10 +80,34 @@
     }
   }
 
+  function initReveal() {
+    var targets = document.querySelectorAll(".section-block, .split-section, .trust-band, .text-page, .tool-workspace, .page-hero, .hero-tool");
+    if (!("IntersectionObserver" in window)) {
+      targets.forEach(function (target) {
+        target.classList.add("is-visible");
+      });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: "0px 0px -40px 0px" });
+
+    targets.forEach(function (target) {
+      target.classList.add("reveal-on-scroll");
+      observer.observe(target);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     injectHeader();
     injectFooter();
     wireControls();
+    initReveal();
   });
 
   window.PixelCapsuleRoute = route;

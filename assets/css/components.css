@@ -9,6 +9,8 @@
   border-radius: var(--radius);
   border: 1px solid var(--primary);
   font-weight: 900;
+  box-shadow: 0 10px 26px rgba(18, 124, 116, 0.12);
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .primary-button,
@@ -20,11 +22,19 @@
 .primary-button:hover,
 .download-button:hover {
   background: var(--primary-strong);
+  box-shadow: 0 14px 34px rgba(18, 124, 116, 0.2);
+  transform: translateY(-2px);
 }
 
 .secondary-button {
   background: var(--surface);
   color: var(--primary-strong);
+  box-shadow: none;
+}
+
+.secondary-button:hover {
+  border-color: var(--primary-strong);
+  transform: translateY(-2px);
 }
 
 .button-row {
@@ -64,13 +74,16 @@
   display: grid;
   gap: 10px;
   min-height: 188px;
-  padding: 18px;
+  padding: 20px;
+  box-shadow: 0 12px 34px rgba(23, 32, 29, 0.06);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .tool-card:hover,
 .content-card:hover {
   border-color: var(--primary);
-  transform: translateY(-2px);
+  box-shadow: 0 18px 44px rgba(23, 32, 29, 0.11);
+  transform: translateY(-4px);
 }
 
 .tool-icon {
@@ -82,6 +95,13 @@
   background: var(--surface-2);
   color: var(--primary-strong);
   font-weight: 900;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.tool-card:hover .tool-icon {
+  background: var(--primary);
+  color: #ffffff;
+  transform: scale(1.04);
 }
 
 .tool-card span,
@@ -100,6 +120,7 @@
 .capsule-card {
   padding: 20px;
   box-shadow: var(--shadow);
+  animation: capsuleAppear 420ms ease both;
 }
 
 .capsule-card.compact {
@@ -143,6 +164,14 @@
   background: var(--surface-2);
   color: var(--text);
   font-weight: 800;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.capsule-actions button:hover,
+.capsule-bottom button:hover,
+.capsule-bottom a:hover {
+  border-color: var(--primary);
+  transform: translateY(-1px);
 }
 
 .capsule-bottom a {
@@ -164,6 +193,18 @@
   );
   font-size: 0.85rem;
   font-weight: 800;
+}
+
+@keyframes capsuleAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 980px) {

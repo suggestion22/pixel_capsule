@@ -5,6 +5,19 @@ body {
   line-height: 1.6;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--line) 32%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in srgb, var(--line) 32%, transparent) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 58%);
+}
+
 :focus-visible {
   outline: 3px solid color-mix(in srgb, var(--primary) 72%, white);
   outline-offset: 3px;
@@ -18,11 +31,12 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  min-height: 72px;
-  padding: 14px max(24px, calc((100vw - 1180px) / 2));
+  min-height: 68px;
+  padding: 12px max(24px, calc((100vw - 1180px) / 2));
   border-bottom: 1px solid color-mix(in srgb, var(--line) 84%, transparent);
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(14px);
+  transition: border-color 180ms ease, background-color 180ms ease;
 }
 
 .brand {
@@ -30,6 +44,11 @@ body {
   align-items: center;
   gap: 10px;
   font-weight: 800;
+  transition: transform 180ms ease;
+}
+
+.brand:hover {
+  transform: translateY(-1px);
 }
 
 .brand-mark {
@@ -44,6 +63,7 @@ body {
   height: 10px;
   border-radius: 3px;
   background: var(--primary);
+  transform-origin: center;
 }
 
 .brand-mark span:nth-child(2) {
@@ -83,6 +103,7 @@ body {
   border: 1px solid transparent;
   background: transparent;
   color: var(--muted);
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
 .main-nav a {
@@ -100,6 +121,12 @@ body {
   border-color: var(--line);
   background: var(--surface);
   color: var(--text);
+}
+
+.main-nav a:hover,
+.theme-toggle:hover,
+.menu-button:hover {
+  transform: translateY(-1px);
 }
 
 .theme-toggle {
@@ -169,6 +196,17 @@ button {
 h1 {
   font-size: 3.35rem;
   line-height: 1.05;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 h2 {
@@ -277,5 +315,21 @@ h3 {
 
   .site-footer nav {
     justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
   }
 }
