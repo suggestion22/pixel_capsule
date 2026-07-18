@@ -1,0 +1,21 @@
+import type { Metadata } from "next";
+import { GuidePage } from "../../components/ContentPages";
+
+export const metadata: Metadata = {
+  title: "JPG, PNG, WebP 차이",
+  description: "사진, 투명 이미지, 웹 최적화에 맞는 이미지 형식 선택 기준을 정리했습니다.",
+  alternates: { canonical: "/guides/jpg-png-webp-guide" },
+};
+
+export default function FormatGuidePage() {
+  return (
+    <GuidePage title="JPG, PNG, WebP 차이" description="이미지 형식은 화질뿐 아니라 투명도, 파일 용량, 호환성에도 영향을 줍니다.">
+      <h2>JPG가 어울리는 경우</h2>
+      <p>사진처럼 색 변화가 많은 이미지는 JPG가 실용적입니다. 투명 배경은 지원하지 않지만 호환성이 좋고 용량 조절이 쉽습니다.</p>
+      <h2>PNG가 어울리는 경우</h2>
+      <p>로고, 아이콘, UI 스크린샷처럼 선명한 경계와 투명 배경이 필요한 이미지는 PNG가 적합합니다.</p>
+      <h2>WebP가 어울리는 경우</h2>
+      <p>웹페이지에 올릴 이미지는 WebP가 좋은 선택일 수 있습니다. 사진과 투명 이미지를 모두 다룰 수 있고 용량도 줄이기 쉽습니다.</p>
+    </GuidePage>
+  );
+}
