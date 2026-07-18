@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>무료 이미지 형식 변환 도구 | Pixel Capsule</title>
+    <meta name="description" content="JPG, PNG, WebP 이미지를 변환하고 JPG 배경색과 출력 품질을 설정합니다.">
+    <link rel="canonical" href="https://suggestion22.github.io/pixel_capsule/tools/image-converter/">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/pages.css">
+    <script src="../../assets/js/theme.js"></script>
+  </head>
+  <body data-page="convert">
+    <header class="site-header" data-site-header></header>
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Browser image tool</p>
+        <h1>무료 이미지 형식 변환 도구</h1>
+        <p>PNG, JPG, WebP 사이의 변환과 투명 배경 처리 옵션을 제공합니다.</p>
+        <p class="privacy-note">형식 변환은 브라우저 안에서 이루어지며 결과 이미지에 워터마크를 넣지 않습니다.</p>
+      </section>
+      <section class="tool-workspace" data-image-tool>
+        <div class="drop-zone" data-drop-zone role="button" tabindex="0" aria-label="이미지 파일 선택">
+          <input class="file-input" data-file-input type="file" accept="image/jpeg,image/png,image/webp">
+          <strong>이미지를 드래그하거나 클릭해서 선택하세요</strong>
+          <span>JPG 변환 시 투명 배경은 선택한 배경색으로 채워집니다.</span>
+        </div>
+        <p class="message error" data-error role="alert"></p>
+        <p class="message" data-status aria-live="polite"></p>
+        <div class="tool-panels">
+          <section class="panel" data-original></section>
+          <section class="panel" data-settings></section>
+          <section class="panel" data-result></section>
+        </div>
+      </section>
+      <section data-after-result hidden>
+        <div class="ad-placeholder" aria-label="Advertisement placeholder">Advertisement</div>
+        <section class="capsule-card compact" data-capsule aria-label="아이디어 캡슐"></section>
+      </section>
+      <section class="text-page">
+        <h2>사용 방법</h2>
+        <ol><li>이미지를 선택합니다.</li><li>출력 형식, 품질, JPG 배경색을 설정합니다.</li><li>변환 결과를 확인하고 다운로드합니다.</li></ol>
+        <h2>주의사항</h2>
+        <p>JPG는 투명도를 지원하지 않습니다. 투명 배경이 필요하면 PNG 또는 WebP를 선택해 주세요.</p>
+      </section>
+    </main>
+    <footer class="site-footer" data-site-footer></footer>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/data/capsule-ideas.js"></script>
+    <script src="../../assets/js/capsules.js"></script>
+    <script src="../../assets/js/image-utils.js"></script>
+    <script src="../../assets/js/image-tool.js"></script>
+    <script src="../../assets/js/image-converter.js"></script>
+  </body>
+</html>

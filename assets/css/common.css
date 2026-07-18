@@ -1,0 +1,281 @@
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 72%, white);
+  outline-offset: 3px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 72px;
+  padding: 14px max(24px, calc((100vw - 1180px) / 2));
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 84%, transparent);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+}
+
+.brand-mark {
+  display: grid;
+  grid-template-columns: repeat(2, 10px);
+  gap: 3px;
+  width: 23px;
+  height: 23px;
+}
+
+.brand-mark span {
+  height: 10px;
+  border-radius: 3px;
+  background: var(--primary);
+}
+
+.brand-mark span:nth-child(2) {
+  background: var(--accent);
+}
+
+.brand-mark span:nth-child(3) {
+  background: var(--accent-2);
+}
+
+.brand-mark span:nth-child(4) {
+  background: var(--text);
+}
+
+.nav-wrap,
+.main-nav,
+.button-row,
+.capsule-actions,
+.capsule-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.nav-wrap {
+  gap: 10px;
+}
+
+.main-nav {
+  gap: 4px;
+}
+
+.main-nav a,
+.theme-toggle,
+.menu-button {
+  min-height: 40px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+}
+
+.main-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.main-nav a[aria-current="page"],
+.main-nav a:hover,
+.theme-toggle:hover,
+.menu-button:hover {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.theme-toggle {
+  padding: 0 12px;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.menu-button {
+  display: none;
+  width: 42px;
+  padding: 0;
+}
+
+.menu-button span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 3px auto;
+  background: currentColor;
+}
+
+main {
+  width: min(1180px, calc(100% - 36px));
+  margin: 0 auto;
+}
+
+.site-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  width: min(1180px, calc(100% - 36px));
+  margin: 70px auto 0;
+  padding: 28px 0 36px;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer p,
+.site-footer nav a {
+  color: var(--muted);
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.site-footer nav a {
+  font-weight: 800;
+}
+
+.copyright {
+  grid-column: 1 / -1;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+button {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  font-size: 3.35rem;
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 1.9rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.08rem;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-block,
+.split-section,
+.trust-band,
+.text-page,
+.tool-workspace {
+  margin: 48px 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.page-hero {
+  max-width: 840px;
+  padding: 80px 0 36px;
+}
+
+.page-hero p:not(.eyebrow),
+.text-page p,
+.split-section p {
+  color: var(--muted);
+}
+
+.page-hero p:not(.eyebrow) {
+  max-width: 700px;
+  font-size: 1.08rem;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    min-height: 64px;
+    padding: 12px 18px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 18px;
+    display: none;
+    width: min(280px, calc(100vw - 36px));
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .main-nav.is-open {
+    display: grid;
+  }
+
+  .main-nav a {
+    width: 100%;
+  }
+
+  main,
+  .site-footer {
+    width: min(100% - 28px, 1180px);
+  }
+
+  h1 {
+    font-size: 2.35rem;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+  }
+
+  .page-hero {
+    padding-top: 46px;
+  }
+
+  .section-heading,
+  .site-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer nav {
+    justify-content: flex-start;
+  }
+}
