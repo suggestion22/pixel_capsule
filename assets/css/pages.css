@@ -137,7 +137,7 @@
 }
 
 .purpose-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
 .purpose-card {
@@ -417,6 +417,25 @@
   display: none;
 }
 
+.target-size-workspace .tool-panels {
+  display: none;
+}
+
+.target-size-workspace.has-image .tool-panels {
+  display: grid;
+  grid-template-columns: minmax(0, 55fr) minmax(320px, 45fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.target-size-workspace [data-result] {
+  grid-column: 1 / -1;
+}
+
+.target-size-workspace [data-result]:empty {
+  display: none;
+}
+
 .step-title {
   display: flex;
   align-items: center;
@@ -640,6 +659,67 @@
   background: color-mix(in srgb, var(--primary) 10%, var(--surface));
   color: var(--primary-strong);
   transform: translateY(-1px);
+}
+
+.target-preset-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.target-preset-grid button {
+  display: grid;
+  gap: 4px;
+  min-height: 86px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.target-preset-grid button:hover,
+.target-preset-grid button.is-active {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 9%, var(--surface));
+  transform: translateY(-1px);
+}
+
+.target-preset-grid span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.target-input-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.78fr);
+  gap: 14px;
+}
+
+.target-input-with-unit {
+  grid-template-columns: minmax(0, 1fr) minmax(82px, auto);
+}
+
+.target-status-badge {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 38px;
+  align-items: center;
+  padding: 0 13px;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.target-status-badge.is-success {
+  background: color-mix(in srgb, var(--primary) 13%, var(--surface));
+  color: var(--primary-strong);
+}
+
+.target-status-badge.is-warning {
+  background: color-mix(in srgb, var(--accent) 18%, var(--surface));
+  color: var(--text);
 }
 
 .expected-result-card {
@@ -1074,6 +1154,7 @@
   }
 
   .resizer-workspace.has-image .tool-panels,
+  .target-size-workspace.has-image .tool-panels,
   .related-tool-grid,
   .purpose-grid,
   .content-grid.three-col {
@@ -1084,7 +1165,8 @@
     grid-template-columns: 1fr;
   }
 
-  .resizer-workspace [data-result] {
+  .resizer-workspace [data-result],
+  .target-size-workspace [data-result] {
     grid-column: auto;
   }
 
@@ -1139,6 +1221,8 @@
 
   .size-input-grid,
   .quick-size-grid,
+  .target-preset-grid,
+  .target-input-grid,
   .result-info,
   .action-stack,
   .result-actions,

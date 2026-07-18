@@ -3,6 +3,7 @@
     { href: "/", label: "Home", page: "home" },
     { href: "/tools/image-resizer/", label: "Resize", page: "resize" },
     { href: "/tools/image-compressor/", label: "Compress", page: "compress" },
+    { href: "/tools/target-file-size/", label: "Target", page: "target-size" },
     { href: "/tools/image-converter/", label: "Convert", page: "convert" },
     { href: "/tools/image-presets/", label: "Presets", page: "presets" },
     { href: "/guides/image-size-guide/", label: "Guides", page: "guides" }
@@ -11,6 +12,7 @@
   var footerItems = [
     { href: "/tools/image-resizer/", label: "Resize" },
     { href: "/tools/image-compressor/", label: "Compress" },
+    { href: "/tools/target-file-size/", label: "Target Size" },
     { href: "/tools/image-converter/", label: "Convert" },
     { href: "/tools/image-presets/", label: "Presets" },
     { href: "/about/", label: "About" },

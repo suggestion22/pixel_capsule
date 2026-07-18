@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>목표 파일 용량 맞추기 | Pixel Capsule</title>
+    <meta name="description" content="이미지를 100KB, 200KB, 500KB, 1MB 또는 원하는 용량 이하가 되도록 브라우저에서 자동 압축하고 바로 다운로드하세요.">
+    <link rel="canonical" href="https://pixel-capsule.pages.dev/tools/target-file-size/">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/pages.css">
+    <script src="../../assets/js/theme.js"></script>
+  </head>
+  <body data-page="target-size">
+    <header class="site-header" data-site-header></header>
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Target File Size</p>
+        <h1>목표 파일 용량 맞추기</h1>
+        <p>JPG, PNG, WebP 이미지를 원하는 용량 이하에 가깝게 자동 압축하세요.</p>
+        <ul class="tool-trust-list" aria-label="서비스 특징">
+          <li><span aria-hidden="true"></span>서버 업로드 없음</li>
+          <li><span aria-hidden="true"></span>워터마크 없음</li>
+          <li><span aria-hidden="true"></span>JPG · PNG · WebP 지원</li>
+        </ul>
+      </section>
+
+      <aside class="tool-difference-note">
+        <strong>목표 용량 도구의 역할</strong>
+        <p>이 도구는 품질 값을 자동으로 여러 번 비교해 목표 파일 용량 이하에 가장 가까운 결과를 찾습니다. 직접 품질을 조절하고 싶다면 <a href="../image-compressor/">이미지 압축 도구</a>를 사용하세요.</p>
+        <p>선택한 이미지는 외부 서버로 업로드되지 않고 현재 브라우저 안에서 처리됩니다. 정확히 같은 KB로 맞추는 기능이 아니라, 이미지 내용과 브라우저 인코딩 결과에 따라 가장 가까운 파일을 생성합니다.</p>
+      </aside>
+
+      <section class="tool-workspace target-size-workspace" data-target-file-size-tool>
+        <label class="drop-zone" data-drop-zone for="target-file-input" tabindex="0" aria-label="이미지 파일 선택">
+          <input id="target-file-input" class="file-input" data-file-input type="file" accept="image/jpeg,image/png,image/webp">
+          <span class="upload-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <strong data-drop-title>이미지를 여기에 끌어다 놓으세요</strong>
+          <em>또는</em>
+          <span class="upload-button-visual">이미지 선택</span>
+          <small>JPG, PNG, WebP · 원활한 처리를 위해 20MB 이하 이미지를 권장합니다.</small>
+        </label>
+        <p class="support-note">지원 형식: JPG, PNG, WebP · 권장 파일 크기: 20MB 이하 · 고해상도 이미지는 기기 성능에 따라 처리되지 않을 수 있습니다.</p>
+        <p class="message error" data-error role="alert"></p>
+        <p class="message" data-status aria-live="polite"></p>
+
+        <div class="tool-panels">
+          <section class="panel" data-original></section>
+          <section class="panel" data-settings></section>
+          <section class="panel" data-result></section>
+        </div>
+      </section>
+
+      <section data-after-result hidden>
+        <section class="capsule-card compact" data-capsule aria-label="아이디어 캡슐"></section>
+        <section class="related-tools" aria-labelledby="target-next-title">
+          <div class="section-heading"><div><p class="eyebrow">Next tools</p><h2 id="target-next-title">다음 작업도 필요하신가요?</h2></div></div>
+          <div class="related-tool-grid">
+            <a href="../image-resizer/"><strong>가로·세로도 줄이시겠어요?</strong><span>해상도까지 줄이면 목표 용량에 더 쉽게 도달할 수 있습니다.</span></a>
+            <a href="../image-converter/"><strong>웹에 맞는 형식으로 바꾸시겠어요?</strong><span>PNG, JPG, WebP 결과를 비교해 보세요.</span></a>
+            <a href="../image-compressor/"><strong>품질을 직접 조절하시겠어요?</strong><span>슬라이더로 용량과 화질의 균형을 직접 찾습니다.</span></a>
+          </div>
+        </section>
+        <aside class="ad-placeholder ad-slot" aria-label="광고 영역"><span>Advertisement</span></aside>
+      </section>
+
+      <section class="text-page">
+        <h2>사용 방법</h2>
+        <ol class="howto-grid">
+          <li><strong>1. 이미지 선택</strong><span>JPG, PNG 또는 WebP 파일을 선택하세요.</span></li>
+          <li><strong>2. 목표 용량 입력</strong><span>100KB, 500KB, 1MB 또는 직접 입력한 용량을 선택하세요.</span></li>
+          <li><strong>3. 결과 확인</strong><span>목표 달성 여부와 실제 용량을 확인한 뒤 다운로드하세요.</span></li>
+        </ol>
+
+        <h2>목표 용량 압축 방식</h2>
+        <p>JPG와 WebP는 품질 값을 낮추면 파일 용량이 줄어들 수 있습니다. 이 도구는 여러 품질 값을 빠르게 비교해 목표 용량 이하가 되는 가장 높은 품질을 찾습니다.</p>
+        <p>PNG는 JPG나 WebP처럼 품질 값을 낮추는 손실 압축이 제한적입니다. PNG 원본이 목표 용량에 도달하지 못한다면 WebP 또는 JPG 출력으로 비교하거나 이미지 크기를 먼저 줄여 보세요.</p>
+        <p>목표 용량은 보장값이 아닙니다. 이미지가 매우 복잡하거나 이미 강하게 압축되어 있으면 최저 품질에서도 목표 이하가 되지 않을 수 있습니다.</p>
+
+        <h2>주의사항</h2>
+        <div class="info-callout">
+          <strong>알아두세요</strong>
+          <p>용량을 크게 줄일수록 작은 글자, 선, 질감이 뭉개질 수 있습니다. 결과 이미지는 실제 사용할 화면에서 한 번 확인해 주세요.</p>
+          <ul>
+            <li>선택한 이미지는 현재 브라우저 안에서 처리되며 서버에 저장되지 않습니다.</li>
+            <li>페이지를 닫거나 새로고침하면 브라우저에 표시된 작업 결과는 사라질 수 있습니다.</li>
+            <li>목표 용량에 도달하지 못하면 결과 정보에 미달성으로 표시됩니다.</li>
+          </ul>
+        </div>
+
+        <h2>자주 묻는 질문</h2>
+        <div class="faq-list">
+          <details><summary>정확히 500KB로 맞춰지나요?</summary><p>정확히 같은 숫자로 맞추지는 않습니다. 브라우저가 생성한 결과 중 목표 용량 이하에 가장 가까운 파일을 선택합니다.</p></details>
+          <details><summary>PNG도 목표 용량에 맞출 수 있나요?</summary><p>PNG는 품질 값을 낮추는 방식이 제한적이라 목표 용량 달성이 어려울 수 있습니다. 투명 배경이 필요하다면 WebP 결과도 비교해 보세요.</p></details>
+          <details><summary>화질은 얼마나 낮아지나요?</summary><p>목표 용량이 작을수록 더 낮은 품질이 선택될 수 있습니다. 결과 정보에서 사용된 품질 값을 확인할 수 있습니다.</p></details>
+          <details><summary>목표에 도달하지 못하면 어떻게 하나요?</summary><p>이미지 크기 변경 도구로 해상도를 줄이거나 WebP/JPG 형식을 선택하면 더 작은 결과를 만들 가능성이 높아집니다.</p></details>
+          <details><summary>이미지가 서버에 업로드되나요?</summary><p>현재 제공되는 이미지 도구는 선택한 이미지를 외부 서버로 업로드하지 않고 브라우저 안에서 처리합니다.</p></details>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer" data-site-footer></footer>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/data/capsule-ideas.js"></script>
+    <script src="../../assets/js/capsules.js"></script>
+    <script src="../../assets/js/image-utils.js"></script>
+    <script src="../../assets/js/target-file-size.js"></script>
+  </body>
+</html>
