@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://suggestion22.github.io/pixel_capsule/sitemap.xml
+Sitemap: https://pixel-capsule.pages.dev/sitemap.xml

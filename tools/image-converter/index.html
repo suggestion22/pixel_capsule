@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>무료 이미지 형식 변환 도구 | Pixel Capsule</title>
-    <meta name="description" content="JPG, PNG, WebP 이미지를 변환하고 JPG 배경색과 출력 품질을 설정합니다.">
-    <link rel="canonical" href="https://suggestion22.github.io/pixel_capsule/tools/image-converter/">
+    <title>PNG·JPG·WebP 이미지 변환 도구 | Pixel Capsule</title>
+    <meta name="description" content="PNG, JPG, WebP 이미지 형식을 브라우저에서 변환하고 JPG 배경색, 출력 품질, 결과 용량을 확인하세요.">
+    <link rel="canonical" href="https://pixel-capsule.pages.dev/tools/image-converter/">
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="../../assets/css/variables.css">
     <link rel="stylesheet" href="../../assets/css/common.css">
@@ -17,17 +17,22 @@
     <header class="site-header" data-site-header></header>
     <main>
       <section class="page-hero">
-        <p class="eyebrow">Browser image tool</p>
-        <h1>무료 이미지 형식 변환 도구</h1>
+        <p class="eyebrow">Image Converter</p>
+        <h1>PNG·JPG·WebP 이미지 변환 도구</h1>
         <p>PNG, JPG, WebP 사이의 변환과 투명 배경 처리 옵션을 제공합니다.</p>
-        <p class="privacy-note">형식 변환은 브라우저 안에서 이루어지며 결과 이미지에 워터마크를 넣지 않습니다.</p>
       </section>
+      <aside class="tool-difference-note">
+        <strong>형식 변환 도구의 역할</strong>
+        <p>이 도구는 JPG, PNG, WebP 사이에서 이미지 파일 형식을 변경합니다. 형식은 유지하고 용량만 줄이고 싶다면 <a href="../image-compressor/">이미지 압축 도구</a>를 사용하세요.</p>
+        <p>선택한 이미지는 외부 서버로 업로드되지 않고 현재 브라우저 안에서 처리됩니다. 페이지를 닫거나 새로고침하면 브라우저에 표시된 작업 결과는 사라질 수 있습니다.</p>
+      </aside>
       <section class="tool-workspace" data-image-tool>
         <div class="drop-zone" data-drop-zone role="button" tabindex="0" aria-label="이미지 파일 선택">
           <input class="file-input" data-file-input type="file" accept="image/jpeg,image/png,image/webp">
           <strong>이미지를 드래그하거나 클릭해서 선택하세요</strong>
           <span>JPG 변환 시 투명 배경은 선택한 배경색으로 채워집니다.</span>
         </div>
+        <p class="support-note">지원 형식: JPG, PNG, WebP · 최대 파일 크기: 20MB · JPG는 투명 배경을 지원하지 않습니다.</p>
         <p class="message error" data-error role="alert"></p>
         <p class="message" data-status aria-live="polite"></p>
         <div class="tool-panels">
@@ -37,14 +42,33 @@
         </div>
       </section>
       <section data-after-result hidden>
-        <div class="ad-placeholder" aria-label="Advertisement placeholder">Advertisement</div>
         <section class="capsule-card compact" data-capsule aria-label="아이디어 캡슐"></section>
+        <section class="related-tools" aria-labelledby="convert-next-title">
+          <div class="section-heading"><div><p class="eyebrow">Next tools</p><h2 id="convert-next-title">다음 작업도 필요하신가요?</h2></div></div>
+          <div class="related-tool-grid">
+            <a href="../image-compressor/"><strong>파일 용량도 줄이시겠어요?</strong><span>품질 값을 조절해 더 가벼운 결과를 만듭니다.</span></a>
+            <a href="../image-presets/"><strong>특정 규격으로 크기를 맞추시겠어요?</strong><span>SNS와 웹사이트용 권장 크기를 적용합니다.</span></a>
+          </div>
+        </section>
+        <aside class="ad-placeholder ad-slot" aria-label="광고 영역"><span>Advertisement</span></aside>
       </section>
       <section class="text-page">
         <h2>사용 방법</h2>
-        <ol><li>이미지를 선택합니다.</li><li>출력 형식, 품질, JPG 배경색을 설정합니다.</li><li>변환 결과를 확인하고 다운로드합니다.</li></ol>
+        <ol class="howto-grid"><li><strong>1. 이미지 선택</strong><span>JPG, PNG 또는 WebP 파일을 선택하세요.</span></li><li><strong>2. 출력 형식 설정</strong><span>결과 형식과 품질, JPG 배경색을 고르세요.</span></li><li><strong>3. 결과 확인</strong><span>형식과 용량 변화를 확인한 뒤 다운로드하세요.</span></li></ol>
+        <h2>형식 선택 기준</h2>
+        <p>JPG는 사진 호환성이 좋고 용량 조절이 쉽지만 투명 배경을 지원하지 않습니다. PNG는 로고, 아이콘, UI 스크린샷처럼 선명한 경계와 투명도가 중요한 이미지에 적합합니다.</p>
+        <p>WebP는 웹사이트 이미지에 유용하며 사진과 투명 이미지를 모두 다룰 수 있습니다. 다만 일부 오래된 프로그램에서는 WebP 파일 열기가 제한될 수 있습니다.</p>
+        <p>형식을 바꾼다고 원본 화질이 좋아지지는 않습니다. 이미 손상되거나 낮은 품질로 저장된 이미지는 더 좋은 형식으로 바꿔도 사라진 정보가 복원되지 않습니다.</p>
         <h2>주의사항</h2>
-        <p>JPG는 투명도를 지원하지 않습니다. 투명 배경이 필요하면 PNG 또는 WebP를 선택해 주세요.</p>
+        <div class="info-callout"><strong>알아두세요</strong><p>JPG는 투명도를 지원하지 않습니다. 투명 배경이 필요하면 PNG 또는 WebP를 선택해 주세요.</p><ul><li>PNG를 JPG로 변환하면 투명 영역이 선택한 배경색으로 채워집니다.</li><li>형식 변환 후 파일 용량은 줄어들 수도, 커질 수도 있습니다.</li><li>웹사이트에는 WebP가 유리할 수 있지만 배포 환경의 호환성을 함께 확인하세요.</li></ul></div>
+        <h2>자주 묻는 질문</h2>
+        <div class="faq-list">
+          <details><summary>PNG를 JPG로 변환하면 투명 배경은 어떻게 되나요?</summary><p>JPG는 투명도를 지원하지 않으므로 선택한 배경색으로 투명 영역이 채워집니다. 기본 배경색은 흰색입니다.</p></details>
+          <details><summary>JPG를 PNG로 바꾸면 화질이 좋아지나요?</summary><p>아니요. 형식을 바꿔도 원본에 없던 디테일이 새로 생기지 않습니다.</p></details>
+          <details><summary>WebP는 일반 이미지 프로그램에서 열 수 있나요?</summary><p>대부분의 최신 브라우저와 많은 프로그램에서 지원하지만, 오래된 편집 도구에서는 열리지 않을 수 있습니다.</p></details>
+          <details><summary>웹사이트에는 어떤 이미지 형식이 적합한가요?</summary><p>사진과 일반 웹 이미지는 WebP가 용량 면에서 유리할 때가 많습니다. 호환성이 가장 중요하면 JPG도 좋은 선택입니다.</p></details>
+          <details><summary>형식 변환 시 파일 용량이 커질 수도 있나요?</summary><p>네. 이미지 내용, 투명도, 품질 값, 출력 형식에 따라 결과 파일이 원본보다 커질 수 있습니다.</p></details>
+        </div>
       </section>
     </main>
     <footer class="site-footer" data-site-footer></footer>

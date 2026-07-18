@@ -9,6 +9,10 @@
   ];
 
   var footerItems = [
+    { href: "/tools/image-resizer/", label: "Resize" },
+    { href: "/tools/image-compressor/", label: "Compress" },
+    { href: "/tools/image-converter/", label: "Convert" },
+    { href: "/tools/image-presets/", label: "Presets" },
     { href: "/about/", label: "About" },
     { href: "/contact/", label: "Contact" },
     { href: "/privacy-policy/", label: "Privacy Policy" },

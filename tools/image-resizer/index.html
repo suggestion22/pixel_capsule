@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>무료 이미지 크기 변경 도구 | Pixel Capsule</title>
     <meta name="description" content="JPG, PNG, WebP 이미지의 가로·세로 크기를 브라우저에서 안전하게 변경하고 바로 다운로드하세요. 서버 업로드와 워터마크 없이 무료로 사용할 수 있습니다.">
-    <link rel="canonical" href="https://suggestion22.github.io/pixel_capsule/tools/image-resizer/">
+    <link rel="canonical" href="https://pixel-capsule.pages.dev/tools/image-resizer/">
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="../../assets/css/variables.css">
     <link rel="stylesheet" href="../../assets/css/common.css">
@@ -26,6 +26,11 @@
           <li><span aria-hidden="true">□</span>JPG · PNG · WebP 지원</li>
         </ul>
       </section>
+      <aside class="tool-difference-note">
+        <strong>크기 변경 도구의 역할</strong>
+        <p>이 도구는 이미지의 가로·세로 픽셀 크기를 변경합니다. 파일의 해상도는 유지하고 용량만 줄이고 싶다면 <a href="../image-compressor/">이미지 압축 도구</a>를 사용하세요.</p>
+        <p>선택한 이미지는 외부 서버로 업로드되지 않고 현재 브라우저 안에서 처리됩니다. 페이지를 닫거나 새로고침하면 브라우저에 표시된 작업 결과는 사라질 수 있습니다.</p>
+      </aside>
       <section class="tool-workspace resizer-workspace" data-image-tool>
         <input id="resize-file-input" class="file-input" data-file-input type="file" accept="image/jpeg,image/png,image/webp">
         <label class="drop-zone" data-drop-zone for="resize-file-input" role="button" tabindex="0" aria-label="이미지 선택 또는 드래그 앤 드롭">
@@ -35,6 +40,7 @@
           <span class="upload-button-visual">이미지 선택</span>
           <small>JPG, PNG, WebP · 권장 최대 20MB</small>
         </label>
+        <p class="support-note">지원 형식: JPG, PNG, WebP · 최대 파일 크기: 20MB · 고해상도 이미지는 기기 성능에 따라 처리되지 않을 수 있습니다.</p>
         <p class="message error" data-error role="alert"></p>
         <p class="message" data-status aria-live="polite"></p>
         <div class="tool-panels">
@@ -87,6 +93,10 @@
             <li>선택한 파일은 서버로 전송하지 않고 브라우저 안에서 처리됩니다.</li>
           </ul>
         </div>
+        <h2>이미지 크기를 바꿀 때 알아둘 점</h2>
+        <p>픽셀 크기는 이미지가 가진 실제 점의 개수입니다. 1920 × 1080 이미지를 1280 × 720으로 줄이면 화면에 필요한 픽셀 수와 총 픽셀 수가 함께 줄어듭니다.</p>
+        <p>원본 비율을 유지하면 이미지가 찌그러지지 않습니다. 비율을 해제하면 가로와 세로를 따로 정할 수 있지만 인물, 로고, 제품이 늘어나거나 눌려 보일 수 있습니다.</p>
+        <p>PNG와 WebP의 투명 배경은 원본 형식을 유지해 저장할 때 보존됩니다. 형식을 바꾸고 싶다면 이미지 형식 변환 도구에서 배경색과 출력 형식을 확인하세요.</p>
         <h2>자주 묻는 질문</h2>
         <div class="faq-list">
           <details>

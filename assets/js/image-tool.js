@@ -26,6 +26,7 @@
       quality: 82,
       outputType: "image/webp",
       background: "#ffffff",
+      presetName: "",
       processing: false
     };
     var input = root.querySelector("[data-file-input]");
@@ -221,20 +222,30 @@
       var saved = state.loaded.size - state.result.blob.size;
       var rate = Math.round(Math.abs(saved) / state.loaded.size * 100);
       var deltaText = saved > 0 ? "원본보다 " + rate + "% 감소" : saved < 0 ? "원본보다 " + rate + "% 증가" : "원본과 용량 동일";
+      var sizeChangeText = saved > 0 ? "파일 용량 " + rate + "% 감소" : saved < 0 ? "파일 용량 " + rate + "% 증가" : "파일 용량 유지";
       var extension = utils.extensionFor(state.result.type).toUpperCase();
+      var originalPixels = state.loaded.width * state.loaded.height;
+      var resultPixels = state.result.width * state.result.height;
+      var pixelRate = originalPixels ? Math.round(Math.abs(originalPixels - resultPixels) / originalPixels * 100) : 0;
+      var pixelText = resultPixels < originalPixels ? "해상도 " + pixelRate + "% 감소" : resultPixels > originalPixels ? "해상도 " + pixelRate + "% 증가" : "해상도 유지";
+      var modeNote = "";
+      if (mode === "compress") modeNote = "품질 " + state.quality + "% · 해상도 " + (state.loaded.width === state.result.width && state.loaded.height === state.result.height ? "유지" : "변경됨");
+      if (mode === "convert") modeNote = state.loaded.type === "image/png" && state.result.type === "image/jpeg" ? "JPG 변환으로 투명 영역은 선택한 배경색으로 채워졌습니다." : "원본 형식 " + formatType(state.loaded.type) + "에서 " + extension + " 형식으로 저장했습니다.";
+      if (mode === "presets") modeNote = (state.presetName ? "선택 프리셋: " + state.presetName + " · " : "") + "결과 비율 " + state.result.width + ":" + state.result.height;
 
       if (!isResizer) {
         result.innerHTML =
-          '<h2>결과 이미지</h2><img src="' + state.result.url + '" alt="변환된 결과 이미지 미리보기">' +
-          '<dl class="info-list"><div><dt>가로</dt><dd>' + state.result.width + 'px</dd></div><div><dt>세로</dt><dd>' + state.result.height + 'px</dd></div><div><dt>용량</dt><dd>' + utils.formatBytes(state.result.blob.size) + '</dd></div><div><dt>변화</dt><dd>' + deltaText + '</dd></div></dl>' +
-          '<a class="download-button" href="' + state.result.url + '" download="' + utils.resultName(state.loaded.file, state.result.type, mode) + '">다운로드</a>';
+          '<h2>변환 완료</h2><div class="image-preview-surface result-surface"><img src="' + state.result.url + '" alt="변환된 결과 이미지 미리보기"></div>' +
+          '<dl class="info-list result-info"><div><dt>원본 파일명</dt><dd title="' + escapeHtml(state.loaded.file.name) + '">' + escapeHtml(state.loaded.file.name) + '</dd></div><div><dt>원본 정보</dt><dd>' + state.loaded.width + ' × ' + state.loaded.height + 'px · ' + utils.formatBytes(state.loaded.size) + ' · ' + formatType(state.loaded.type) + '</dd></div><div><dt>결과 해상도</dt><dd>' + state.result.width + ' × ' + state.result.height + 'px</dd></div><div><dt>결과 용량</dt><dd>' + utils.formatBytes(state.result.blob.size) + '</dd></div><div><dt>결과 형식</dt><dd>' + extension + '</dd></div><div><dt>변화</dt><dd>' + pixelText + ' · ' + sizeChangeText + '</dd></div></dl>' +
+          (modeNote ? '<p class="preview-note">' + modeNote + '</p>' : "") +
+          '<a class="download-button" href="' + state.result.url + '" download="' + utils.resultName(state.loaded.file, state.result.type, mode) + '">' + extension + ' 이미지 다운로드</a>';
       } else {
         result.innerHTML =
           '<div class="step-title"><span class="step-number complete">3</span><div><p class="eyebrow">Result</p><h2>변환 완료</h2></div></div>' +
           '<div class="comparison-summary" aria-label="원본과 결과 비교 요약"><span>원본 ' + state.loaded.width + ' × ' + state.loaded.height + 'px</span><span>결과 ' + state.result.width + ' × ' + state.result.height + 'px</span></div>' +
           '<div class="image-preview-surface result-surface"><img src="' + state.result.url + '" alt="변환된 결과 이미지 미리보기"></div>' +
           '<p class="preview-note">화면 맞춤 미리보기입니다. 실제 파일 크기는 아래 정보를 확인하세요.</p>' +
-          '<dl class="info-list result-info"><div><dt>결과 해상도</dt><dd>' + state.result.width + ' × ' + state.result.height + 'px</dd></div><div><dt>결과 용량</dt><dd>' + utils.formatBytes(state.result.blob.size) + '</dd></div><div><dt>용량 변화</dt><dd>' + deltaText + '</dd></div><div><dt>파일 형식</dt><dd>' + extension + '</dd></div></dl>' +
+          '<dl class="info-list result-info"><div><dt>결과 해상도</dt><dd>' + state.result.width + ' × ' + state.result.height + 'px</dd></div><div><dt>결과 용량</dt><dd>' + utils.formatBytes(state.result.blob.size) + '</dd></div><div><dt>총 픽셀 변화</dt><dd>' + pixelText + '</dd></div><div><dt>파일 용량 변화</dt><dd>' + deltaText + '</dd></div><div><dt>파일 형식</dt><dd>' + extension + '</dd></div></dl>' +
           '<div class="button-row result-actions"><a class="download-button" href="' + state.result.url + '" download="' + utils.resultName(state.loaded.file, state.result.type, "resized") + '">' + extension + ' 이미지 다운로드</a><button class="secondary-button" type="button" data-focus-settings>설정 수정</button><button class="secondary-button subtle-button" type="button" data-choose-file>새 이미지 선택</button></div>';
       }
       if (afterResult) afterResult.hidden = false;
@@ -283,6 +294,7 @@
         state.height = loaded.height;
         state.scale = 100;
         state.keepRatio = true;
+        state.presetName = "";
         state.outputType = mode === "convert" ? "image/jpeg" : loaded.type === "image/png" && mode === "compress" ? "image/webp" : loaded.type;
         root.classList.add("has-image");
         root.dataset.state = "ready";
@@ -444,6 +456,7 @@
         if (preset) {
           state.width = preset.width;
           state.height = preset.height;
+          state.presetName = preset.name;
           syncSettings();
         }
       }

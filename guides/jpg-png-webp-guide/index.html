@@ -1,22 +1,30 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JPG, PNG, WebP 차이 | Pixel Capsule</title>
-    <meta name="description" content="사진, 투명 이미지, 웹 최적화에 맞는 이미지 형식 선택 기준을 정리했습니다.">
+    <meta name="description" content="JPG, PNG, WebP의 압축 방식, 투명 배경, 파일 용량, 웹 호환성을 비교하고 상황별 추천 형식을 안내합니다.">
+    <link rel="canonical" href="https://pixel-capsule.pages.dev/guides/jpg-png-webp-guide/">
     <link rel="stylesheet" href="../../assets/css/reset.css"><link rel="stylesheet" href="../../assets/css/variables.css"><link rel="stylesheet" href="../../assets/css/common.css"><link rel="stylesheet" href="../../assets/css/components.css"><link rel="stylesheet" href="../../assets/css/pages.css">
     <script src="../../assets/js/theme.js"></script>
   </head>
   <body data-page="guide-format">
     <header class="site-header" data-site-header></header>
     <main>
-      <section class="page-hero"><p class="eyebrow">Guide</p><h1>JPG, PNG, WebP 차이</h1><p>이미지 형식은 화질뿐 아니라 투명도, 파일 용량, 호환성에도 영향을 줍니다.</p></section>
-      <section class="text-page">
-        <h2>JPG가 어울리는 경우</h2><p>사진처럼 색 변화가 많은 이미지는 JPG가 실용적입니다. 투명 배경은 지원하지 않지만 호환성이 좋고 용량 조절이 쉽습니다.</p>
-        <h2>PNG가 어울리는 경우</h2><p>로고, 아이콘, UI 스크린샷처럼 선명한 경계와 투명 배경이 필요한 이미지는 PNG가 적합합니다.</p>
-        <h2>WebP가 어울리는 경우</h2><p>웹페이지에 올릴 이미지는 WebP가 좋은 선택일 수 있습니다. 사진과 투명 이미지를 모두 다룰 수 있고 용량도 줄이기 쉽습니다.</p>
-        <div class="next-links"><a href="../../tools/image-converter/">이미지 형식 변환하기</a><a href="../../tools/image-compressor/">이미지 압축하기</a></div>
+      <section class="page-hero"><p class="eyebrow">Guide</p><h1>JPG, PNG, WebP 차이</h1><p>이미지 형식은 화질뿐 아니라 투명도, 파일 용량, 편집 호환성, 웹사이트 속도에 영향을 줍니다.</p><p class="review-note">최종 검토일: 2026년 7월 18일</p></section>
+      <section class="text-page guide-article">
+        <h2>목차</h2>
+        <nav class="toc-list" aria-label="가이드 목차"><a href="#compare">한눈에 비교</a><a href="#choose">상황별 추천</a><a href="#mistakes">주의할 점</a><a href="#faq">FAQ</a></nav>
+        <h2 id="compare">JPG, PNG, WebP 한눈에 비교</h2>
+        <div class="table-wrap"><table class="guide-table"><thead><tr><th>항목</th><th>JPG</th><th>PNG</th><th>WebP</th></tr></thead><tbody><tr><td>압축 방식</td><td>손실 압축</td><td>무손실 중심</td><td>손실/무손실 모두 가능</td></tr><tr><td>투명 배경</td><td>지원하지 않음</td><td>지원</td><td>지원</td></tr><tr><td>사진 적합성</td><td>높음</td><td>보통</td><td>높음</td></tr><tr><td>로고·아이콘</td><td>낮음</td><td>높음</td><td>높음</td></tr><tr><td>파일 용량</td><td>작게 만들기 쉬움</td><td>커질 수 있음</td><td>작게 만들기 쉬움</td></tr><tr><td>웹사이트 사용</td><td>호환성 좋음</td><td>투명 그래픽에 적합</td><td>최적화에 유리</td></tr><tr><td>편집 호환성</td><td>매우 좋음</td><td>매우 좋음</td><td>프로그램별 차이 있음</td></tr></tbody></table></div>
+        <h2 id="choose">상황별 추천</h2>
+        <div class="content-grid two-col"><div><h3>스마트폰 사진</h3><p>호환성이 중요하면 JPG, 웹 페이지 속도가 중요하면 WebP를 비교하세요.</p></div><div><h3>로고와 아이콘</h3><p>투명 배경과 선명한 경계가 필요하므로 PNG 또는 WebP가 적합합니다.</p></div><div><h3>투명 배경 캐릭터</h3><p>투명도를 유지해야 하므로 JPG는 피하고 PNG 또는 WebP를 사용하세요.</p></div><div><h3>스크린샷</h3><p>텍스트와 선이 많다면 PNG가 선명할 수 있고, 웹 게시용은 WebP도 비교할 만합니다.</p></div><div><h3>쇼핑몰 상품 사진</h3><p>사진은 JPG 또는 WebP가 실용적입니다. 배경 투명 상품 컷은 PNG 또는 WebP를 선택하세요.</p></div><div><h3>블로그 대표 이미지와 SNS 게시물</h3><p>JPG와 WebP를 비교하고, 공유 호환성이 필요하면 JPG를 함께 보관하세요.</p></div></div>
+        <h2 id="mistakes">잘못 선택했을 때 생기는 문제</h2>
+        <p>투명 PNG를 JPG로 바꾸면 투명 영역이 배경색으로 채워집니다. JPG를 PNG로 바꾼다고 이미 손실된 화질이 복원되지는 않습니다. WebP는 웹에 유리하지만 오래된 편집 프로그램에서는 열리지 않을 수 있습니다.</p>
+        <h2>관련 도구</h2><div class="next-links"><a href="../../tools/image-converter/">이미지 형식 변환하기</a><a href="../../tools/image-compressor/">이미지 압축하기</a><a href="../image-compression-guide/">용량 줄이기 가이드</a></div>
+        <h2 id="faq">FAQ</h2>
+        <div class="faq-list"><details><summary>웹사이트에는 항상 WebP가 가장 좋은가요?</summary><p>대체로 용량 면에서 유리하지만, 오래된 환경 호환성이 중요하면 JPG 또는 PNG도 함께 고려해야 합니다.</p></details><details><summary>PNG는 항상 화질이 더 좋은가요?</summary><p>선명한 선과 투명 배경에는 유리하지만 사진에서는 용량이 커질 수 있습니다.</p></details><details><summary>JPG는 투명 배경을 쓸 수 없나요?</summary><p>네. JPG는 투명도를 지원하지 않으므로 투명 영역은 배경색으로 채워집니다.</p></details></div>
       </section>
       <div class="ad-placeholder" aria-label="Advertisement placeholder">Advertisement</div>
     </main>

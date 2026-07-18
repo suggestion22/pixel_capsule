@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SNS 이미지 크기 프리셋 | Pixel Capsule</title>
     <meta name="description" content="YouTube, Instagram, Open Graph, 블로그 썸네일 규격을 선택해 이미지 크기를 변경합니다.">
-    <link rel="canonical" href="https://suggestion22.github.io/pixel_capsule/tools/image-presets/">
+    <link rel="canonical" href="https://pixel-capsule.pages.dev/tools/image-presets/">
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="../../assets/css/variables.css">
     <link rel="stylesheet" href="../../assets/css/common.css">
@@ -17,18 +17,24 @@
     <header class="site-header" data-site-header></header>
     <main>
       <section class="page-hero">
-        <p class="eyebrow">Browser image tool</p>
+        <p class="eyebrow">Image Presets</p>
         <h1>SNS 및 웹 이미지 크기 프리셋</h1>
         <p>자주 쓰는 규격을 직접 입력하지 않고 선택해서 이미지 크기에 적용하세요.</p>
-        <p class="privacy-note">프리셋 데이터는 별도 객체로 관리됩니다. 마지막 확인 날짜: <span data-preset-last-checked></span></p>
       </section>
+      <aside class="tool-difference-note">
+        <strong>프리셋 도구의 역할</strong>
+        <p>이 도구는 SNS, 블로그, 웹사이트에서 자주 사용하는 이미지 규격을 선택해 적용합니다. 원하는 픽셀 크기를 직접 입력하려면 <a href="../image-resizer/">이미지 크기 변경 도구</a>를 사용하세요.</p>
+        <p>선택한 이미지는 외부 서버로 업로드되지 않고 현재 브라우저 안에서 처리됩니다. 페이지를 닫거나 새로고침하면 브라우저에 표시된 작업 결과는 사라질 수 있습니다.</p>
+      </aside>
       <div class="preset-overview" data-preset-overview></div>
+      <p class="preset-metadata-note"><span data-preset-last-checked></span><br>플랫폼별 권장 이미지 규격은 변경될 수 있습니다. 중요한 작업에 사용할 경우 해당 플랫폼의 최신 안내도 함께 확인해 주세요.</p>
       <section class="tool-workspace" data-image-tool>
         <div class="drop-zone" data-drop-zone role="button" tabindex="0" aria-label="이미지 파일 선택">
           <input class="file-input" data-file-input type="file" accept="image/jpeg,image/png,image/webp">
           <strong>이미지를 드래그하거나 클릭해서 선택하세요</strong>
           <span>프리셋을 선택하면 가로와 세로 값이 자동으로 적용됩니다.</span>
         </div>
+        <p class="support-note">지원 형식: JPG, PNG, WebP · 최대 파일 크기: 20MB · 현재 프리셋은 맞춤 크기 변경 방식으로 적용됩니다.</p>
         <p class="message error" data-error role="alert"></p>
         <p class="message" data-status aria-live="polite"></p>
         <div class="tool-panels">
@@ -38,14 +44,33 @@
         </div>
       </section>
       <section data-after-result hidden>
-        <div class="ad-placeholder" aria-label="Advertisement placeholder">Advertisement</div>
         <section class="capsule-card compact" data-capsule aria-label="아이디어 캡슐"></section>
+        <section class="related-tools" aria-labelledby="preset-next-title">
+          <div class="section-heading"><div><p class="eyebrow">Next tools</p><h2 id="preset-next-title">다음 작업도 필요하신가요?</h2></div></div>
+          <div class="related-tool-grid">
+            <a href="../image-compressor/"><strong>결과 이미지 용량을 줄이시겠어요?</strong><span>프리셋 적용 후 파일 크기를 더 가볍게 만듭니다.</span></a>
+            <a href="../image-resizer/"><strong>다른 크기로 직접 조정하시겠어요?</strong><span>가로·세로 값을 자유롭게 입력합니다.</span></a>
+          </div>
+        </section>
+        <aside class="ad-placeholder ad-slot" aria-label="광고 영역"><span>Advertisement</span></aside>
       </section>
       <section class="text-page">
         <h2>사용 방법</h2>
-        <ol><li>이미지를 선택합니다.</li><li>원하는 SNS 또는 웹 프리셋을 선택합니다.</li><li>결과 이미지를 확인하고 다운로드합니다.</li></ol>
+        <ol class="howto-grid"><li><strong>1. 이미지 선택</strong><span>JPG, PNG 또는 WebP 파일을 선택하세요.</span></li><li><strong>2. 프리셋 선택</strong><span>YouTube, Instagram, Open Graph 등 목적에 맞는 규격을 고르세요.</span></li><li><strong>3. 결과 다운로드</strong><span>결과 비율과 해상도를 확인한 뒤 저장하세요.</span></li></ol>
+        <h2>프리셋을 사용할 때 알아둘 점</h2>
+        <p>플랫폼별 규격은 이미지가 표시되는 영역에 맞춰 권장되는 크기입니다. 같은 1:1 이미지라도 프로필, 게시물, 썸네일에서 실제 표시 방식은 다를 수 있습니다.</p>
+        <p>현재 프리셋 도구는 선택한 규격으로 이미지를 맞춰 크기를 변경합니다. 향후 자르기 기능이 추가되면 맞춤, 채우기, 자르기 방식을 선택할 수 있도록 확장할 예정입니다.</p>
+        <p>안전 영역은 잘림이나 UI 가림을 피하기 위해 핵심 피사체와 텍스트를 배치하는 중앙 영역을 뜻합니다. 스토리와 프로필 이미지는 특히 안전 영역을 고려하세요.</p>
         <h2>주의사항</h2>
-        <p>플랫폼 권장 규격은 바뀔 수 있으므로 실제 업로드 전 최신 정책을 함께 확인하는 것이 좋습니다.</p>
+        <div class="info-callout"><strong>알아두세요</strong><p>플랫폼 권장 규격은 바뀔 수 있으므로 실제 업로드 전 최신 정책을 함께 확인하는 것이 좋습니다.</p><ul><li>프리셋 적용 후 이미지가 왜곡되지 않게 원본 비율 유지 상태를 확인하세요.</li><li>서비스별 미리보기 자르기 방식은 시점과 화면 크기에 따라 달라질 수 있습니다.</li><li>중요한 글자와 로고는 가장자리에서 충분히 떨어뜨려 배치하세요.</li></ul></div>
+        <h2>자주 묻는 질문</h2>
+        <div class="faq-list">
+          <details><summary>프리셋을 선택하면 이미지가 잘릴 수 있나요?</summary><p>현재 도구는 선택한 크기로 리사이즈하는 방식입니다. 향후 자르기 모드가 추가되면 잘림 여부를 별도로 선택할 수 있게 할 예정입니다.</p></details>
+          <details><summary>이미지가 찌그러지지 않게 하려면 어떻게 해야 하나요?</summary><p>원본 비율 유지 옵션을 켜고, 필요한 경우 원본과 비슷한 비율의 프리셋을 선택하세요.</p></details>
+          <details><summary>플랫폼별 규격은 변경될 수 있나요?</summary><p>네. 각 플랫폼의 권장 규격은 변경될 수 있어 중요한 작업에는 최신 공식 안내도 함께 확인하는 것이 좋습니다.</p></details>
+          <details><summary>같은 이미지로 여러 규격을 만들 수 있나요?</summary><p>가능합니다. 하나의 이미지를 업로드한 뒤 다른 프리셋을 선택해 다시 변환하면 여러 규격을 만들 수 있습니다.</p></details>
+          <details><summary>안전 영역이란 무엇인가요?</summary><p>서비스 UI, 원형 자르기, 미리보기 잘림에 가려지지 않도록 중요한 내용을 배치하는 중앙 여유 영역입니다.</p></details>
+        </div>
       </section>
     </main>
     <footer class="site-footer" data-site-footer></footer>

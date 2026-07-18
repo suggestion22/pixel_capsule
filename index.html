@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pixel Capsule | 무료 브라우저 이미지 도구</title>
-    <meta name="description" content="이미지 크기 변경, 용량 압축, 형식 변환을 브라우저에서 빠르게 처리하는 무료 이미지 도구입니다.">
-    <link rel="canonical" href="https://suggestion22.github.io/pixel_capsule/">
+    <title>무료 이미지 변환·압축 도구 | Pixel Capsule</title>
+    <meta name="description" content="이미지 크기 변경, 용량 압축, JPG·PNG·WebP 형식 변환과 SNS 이미지 프리셋을 브라우저에서 무료로 사용하세요.">
+    <link rel="canonical" href="https://pixel-capsule.pages.dev/">
     <meta property="og:title" content="Pixel Capsule">
     <meta property="og:description" content="빠른 이미지 변환과 작은 아이디어 캡슐을 제공하는 무료 브라우저 이미지 도구입니다.">
     <link rel="stylesheet" href="./assets/css/reset.css">
@@ -22,7 +22,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Free browser image tools</p>
           <h1>빠른 이미지 변환과 작은 아이디어 캡슐</h1>
-          <p>이미지 크기 변경, 용량 압축, 형식 변환을 브라우저에서 빠르게 처리하세요. 파일은 가능한 범위에서 사용자의 기기 안에서 처리됩니다.</p>
+          <p>이미지 크기 변경, 용량 압축, 형식 변환을 브라우저에서 빠르게 처리하세요. 선택한 이미지는 외부 서버로 업로드되지 않고 현재 브라우저 안에서 처리됩니다.</p>
           <div class="button-row">
             <a class="primary-button" href="./tools/image-resizer/">이미지 크기 변경</a>
             <a class="secondary-button" href="./tools/image-compressor/">이미지 압축</a>
@@ -37,7 +37,31 @@
             <span class="accent"></span><span></span><span></span><span></span><span class="active"></span><span></span>
             <span></span><span></span><span class="active"></span><span></span><span></span><span class="accent"></span>
           </div>
-          <div class="mini-result"><span>1280 x 720</span><strong>WebP</strong><em>-42%</em></div>
+          <div class="hero-result-card" aria-label="이미지 변환 예시">
+            <strong>변환 예시</strong>
+            <div class="result-compare-mini">
+              <div><span>원본</span><b>1920 × 1080</b><small>PNG · 1.8MB</small></div>
+              <div><span>결과</span><b>1280 × 720</b><small>WebP · 1.04MB</small></div>
+            </div>
+            <p>파일 용량 42% 감소</p>
+            <small>예시 결과이며 실제 용량은 이미지 내용과 설정에 따라 달라집니다.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block purpose-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Choose by goal</p>
+            <h2>무엇을 하고 싶으신가요?</h2>
+            <p>필요한 작업을 선택하면 알맞은 이미지 도구로 바로 이동합니다.</p>
+          </div>
+        </div>
+        <div class="purpose-grid">
+          <a class="purpose-card" href="./tools/image-resizer/"><span class="purpose-card__label">사진 크기를 바꾸고 싶어요</span><strong class="purpose-card__tool">이미지 크기 변경</strong><span class="purpose-card__description">가로·세로 픽셀과 비율을 원하는 크기로 조정합니다.</span><em>이동</em></a>
+          <a class="purpose-card" href="./tools/image-compressor/"><span class="purpose-card__label">파일 용량을 줄이고 싶어요</span><strong class="purpose-card__tool">이미지 압축</strong><span class="purpose-card__description">품질 값을 조절해 웹과 SNS에 더 가벼운 파일을 만듭니다.</span><em>이동</em></a>
+          <a class="purpose-card" href="./tools/image-converter/"><span class="purpose-card__label">PNG, JPG, WebP 형식을 바꾸고 싶어요</span><strong class="purpose-card__tool">이미지 형식 변환</strong><span class="purpose-card__description">투명 배경과 출력 형식을 확인하며 파일 형식을 변경합니다.</span><em>이동</em></a>
+          <a class="purpose-card" href="./tools/image-presets/"><span class="purpose-card__label">SNS나 웹사이트 규격을 모르겠어요</span><strong class="purpose-card__tool">이미지 프리셋</strong><span class="purpose-card__description">YouTube, Instagram, Open Graph 등 자주 쓰는 규격을 적용합니다.</span><em>이동</em></a>
         </div>
       </section>
 
@@ -63,8 +87,8 @@
       <section class="split-section">
         <div>
           <p class="eyebrow">Idea Capsule</p>
-          <h2>작업이 끝난 뒤 작은 아이디어를 만나보세요.</h2>
-          <p>이미지 비율, 파일 형식, 컬러 조합, 썸네일 구성에 관한 짧은 추천을 랜덤으로 제공합니다. 다운로드를 막거나 사용을 강제하지 않습니다.</p>
+          <h2>오늘의 이미지 아이디어를 바로 뽑아보세요.</h2>
+          <p>이미지 비율, 파일 형식, 컬러 조합, 썸네일 구성에 관한 짧은 추천을 제공합니다. 광고 클릭이나 다운로드 전 확인을 요구하지 않습니다.</p>
         </div>
         <section class="capsule-card" data-capsule aria-label="아이디어 캡슐"></section>
       </section>
